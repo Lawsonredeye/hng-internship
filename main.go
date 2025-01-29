@@ -9,7 +9,7 @@ import (
 
 type UserInfo struct {
 	Email string `json:"email"`
-	CurrentDatetime string `json:"created_time"`
+	CurrentDatetime string `json:"current_dateime"`
 	GithubUrl string `json:"github_url"`
 }
 
