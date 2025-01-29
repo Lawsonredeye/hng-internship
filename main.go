@@ -9,7 +9,7 @@ import (
 
 type UserInfo struct {
 	Email string `json:"email"`
-	CurrentDatetime time.Time `json:"created_time"`
+	CurrentDatetime string `json:"created_time"`
 	GithubUrl string `json:"github_url"`
 }
 
@@ -17,8 +17,10 @@ func main() {
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
 		userUrl := "https://github.com/lawsonredeye/hng-internship"
+		t := time.Now().UTC()
+		ft := t.Format(time.RFC3339)
 		user := UserInfo{"omoregbeeolawson@gmail.com",
-			time.Now().UTC(),
+			ft,
 			userUrl,
 		}
 		w.Header().Add("Content-Type", "application/json")
