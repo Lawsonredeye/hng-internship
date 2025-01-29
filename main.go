@@ -14,12 +14,6 @@ type UserInfo struct {
 }
 
 func main() {
-	// returns the details in the format:
-	// {
-	//   "email": "your-email@example.com",
-	//   "current_datetime": "2025-01-30T09:30:00Z",
-	//   "github_url": "<https://github.com/yourusername/your-repo>"
-	// }
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
 		userUrl := "https://github.com/lawsonredeye/hng-internship"
